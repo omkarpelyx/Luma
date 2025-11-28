@@ -16,7 +16,7 @@ class EventsBloc extends Bloc<EventsEvent, EventsState> {
     on<RefreshEvents>(_onRefreshEvents);
   }
 
-  final GetUserEvents getUserEvents;
+  final GetUserEvents getUserEvents; //testing github
   final GetNearbyEvents getNearbyEvents;
 
   Future<void> _onLoadUserEvents(
