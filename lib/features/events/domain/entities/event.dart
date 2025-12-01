@@ -36,19 +36,19 @@ class Event extends Equatable {
 
   @override
   List<Object?> get props => [
-        id,
-        title,
-        description,
-        startTime,
-        endTime,
-        location,
-        imageUrl,
-        organizerId,
-        organizerName,
-        category,
-        isFree,
-        price,
-        requiresApproval,
-        visibility,
-      ];
+    id,
+    title,
+    description,
+    startTime,
+    endTime,
+    location,
+    imageUrl,
+    organizerId,
+    organizerName,
+    category,
+    isFree,
+    price,
+    requiresApproval,
+    visibility,
+  ];
 }

@@ -25,10 +25,7 @@ class SignInWithPhoneRequested extends AuthEvent {
 
 /// Event to verify OTP
 class VerifyOtpRequested extends AuthEvent {
-  const VerifyOtpRequested({
-    required this.phoneNumber,
-    required this.code,
-  });
+  const VerifyOtpRequested({required this.phoneNumber, required this.code});
 
   final String phoneNumber;
   final String code;

@@ -25,16 +25,10 @@ import '../features/events/presentation/bloc/events_bloc.dart';
 
 final sl = GetIt.instance;
 
-
 Future<void> initializeDependencies() async {
-
-  
   sl.registerFactory(
-    () => AuthBloc(
-      getCurrentUser: sl(),
-      signInWithPhone: sl(),
-      verifyOtp: sl(),
-    ),
+    () =>
+        AuthBloc(getCurrentUser: sl(), signInWithPhone: sl(), verifyOtp: sl()),
   );
 
   sl.registerLazySingleton(() => GetCurrentUser(sl()));
@@ -42,35 +36,25 @@ Future<void> initializeDependencies() async {
   sl.registerLazySingleton(() => VerifyOtp(sl()));
 
   sl.registerLazySingleton<AuthRepository>(
-    () => AuthRepositoryImpl(
-      localDataSource: sl(),
-    ),
+    () => AuthRepositoryImpl(localDataSource: sl()),
   );
 
   sl.registerLazySingleton<AuthLocalDataSource>(
     () => AuthLocalDataSourceImpl(sl()),
   );
 
-  
   sl.registerFactory(
-    () => EventsBloc(
-      getUserEvents: sl(),
-      getNearbyEvents: sl(),
-    ),
+    () => EventsBloc(getUserEvents: sl(), getNearbyEvents: sl()),
   );
 
-  
   sl.registerLazySingleton(() => GetUserEvents(sl()));
   sl.registerLazySingleton(() => GetNearbyEvents(sl()));
 
   sl.registerLazySingleton<EventRepository>(
-    () => EventRepositoryImpl(
-      dummyDataSource: sl(),
-    ),
+    () => EventRepositoryImpl(dummyDataSource: sl()),
   );
 
   sl.registerLazySingleton(() => EventDummyDataSource());
-
 
   sl.registerFactory(
     () => CounterBloc(
@@ -81,27 +65,20 @@ Future<void> initializeDependencies() async {
     ),
   );
 
-  
   sl.registerLazySingleton(() => GetCounter(sl()));
   sl.registerLazySingleton(() => IncrementCounter(sl()));
   sl.registerLazySingleton(() => DecrementCounter(sl()));
   sl.registerLazySingleton(() => ResetCounter(sl()));
 
   sl.registerLazySingleton<CounterRepository>(
-    () => CounterRepositoryImpl(
-      localDataSource: sl(),
-    ),
+    () => CounterRepositoryImpl(localDataSource: sl()),
   );
 
-  
   sl.registerLazySingleton<CounterLocalDataSource>(
     () => CounterLocalDataSourceImpl(sl()),
   );
 
-
-
   sl.registerLazySingleton<NetworkInfo>(() => NetworkInfoImpl());
-
 
   final sharedPreferences = await SharedPreferences.getInstance();
   sl.registerLazySingleton(() => sharedPreferences);

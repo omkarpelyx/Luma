@@ -10,15 +10,18 @@ class AppStrings {
   static const String continueWithPhone = 'Continue with Phone';
   static const String continueWithEmail = 'Continue with Email';
   static const String enterCode = 'Enter Code';
-  static const String verificationSent = 'We sent a verification code to your phone number';
+  static const String verificationSent =
+      'We sent a verification code to your phone number';
   static const String viaWhatsApp = 'via WhatsApp.';
-  static const String manageEventsDesc = 'Manage events you host, see the guest list, and check in guests.';
+  static const String manageEventsDesc =
+      'Manage events you host, see the guest list, and check in guests.';
 
   // Home
   static const String yourEvents = 'Your Events';
   static const String viewAll = 'View All';
   static const String noUpcomingEvents = 'No Upcoming Events';
-  static const String noUpcomingEventsDesc = 'Events you are hosting or going to will show up here.';
+  static const String noUpcomingEventsDesc =
+      'Events you are hosting or going to will show up here.';
   static const String pickedForYou = 'Picked for You';
   static const String nearby = 'Nearby';
 

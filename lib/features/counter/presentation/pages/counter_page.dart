@@ -36,9 +36,7 @@ class CounterPageContent extends StatelessWidget {
       body: BlocBuilder<CounterBloc, CounterState>(
         builder: (context, state) {
           if (state is CounterLoading) {
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
+            return const Center(child: CircularProgressIndicator());
           } else if (state is CounterLoaded) {
             return CounterView(
               value: state.counter.value,
@@ -57,11 +55,7 @@ class CounterPageContent extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Icon(
-                    Icons.error_outline,
-                    color: Colors.red,
-                    size: 64,
-                  ),
+                  const Icon(Icons.error_outline, color: Colors.red, size: 64),
                   const SizedBox(height: 16),
                   Text(
                     state.message,

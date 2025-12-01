@@ -18,8 +18,9 @@ class EventDummyDataSource {
   Future<List<EventModel>> getEventsByCategory(String category) async {
     await Future.delayed(const Duration(milliseconds: 500));
     return _dummyEvents
-        .where((event) =>
-            event.category.toLowerCase() == category.toLowerCase())
+        .where(
+          (event) => event.category.toLowerCase() == category.toLowerCase(),
+        )
         .toList();
   }
 

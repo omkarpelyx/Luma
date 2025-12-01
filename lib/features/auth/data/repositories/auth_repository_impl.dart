@@ -7,9 +7,7 @@ import '../models/user_model.dart';
 
 /// Implementation of AuthRepository
 class AuthRepositoryImpl implements AuthRepository {
-  const AuthRepositoryImpl({
-    required this.localDataSource,
-  });
+  const AuthRepositoryImpl({required this.localDataSource});
 
   final AuthLocalDataSource localDataSource;
 

@@ -30,7 +30,6 @@ class AppRouter {
         name: homeName,
         builder: (context, state) => const HomePage(),
       ),
-     
     ],
     errorBuilder: (context, state) => Scaffold(
       backgroundColor: Colors.black,
@@ -38,11 +37,7 @@ class AppRouter {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(
-              Icons.error_outline,
-              size: 64,
-              color: Colors.red,
-            ),
+            const Icon(Icons.error_outline, size: 64, color: Colors.red),
             const SizedBox(height: 16),
             Text(
               'Page not found: ${state.uri}',

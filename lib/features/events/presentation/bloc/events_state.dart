@@ -21,10 +21,7 @@ class EventsLoading extends EventsState {
 
 /// Events loaded successfully
 class EventsLoaded extends EventsState {
-  const EventsLoaded({
-    required this.userEvents,
-    required this.nearbyEvents,
-  });
+  const EventsLoaded({required this.userEvents, required this.nearbyEvents});
 
   final List<Event> userEvents;
   final List<Event> nearbyEvents;

@@ -29,16 +29,13 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   ) async {
     emit(const AuthLoading());
     final result = await getCurrentUser(const NoParams());
-    result.fold(
-      (failure) => emit(const Unauthenticated()),
-      (user) {
-        if (user != null) {
-          emit(Authenticated(user));
-        } else {
-          emit(const Unauthenticated());
-        }
-      },
-    );
+    result.fold((failure) => emit(const Unauthenticated()), (user) {
+      if (user != null) {
+        emit(Authenticated(user));
+      } else {
+        emit(const Unauthenticated());
+      }
+    });
   }
 
   Future<void> _onSignInWithPhoneRequested(
@@ -61,10 +58,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   ) async {
     emit(const AuthLoading());
     final result = await verifyOtp(
-      VerifyOtpParams(
-        phoneNumber: event.phoneNumber,
-        code: event.code,
-      ),
+      VerifyOtpParams(phoneNumber: event.phoneNumber, code: event.code),
     );
     result.fold(
       (failure) => emit(AuthError(failure.message)),

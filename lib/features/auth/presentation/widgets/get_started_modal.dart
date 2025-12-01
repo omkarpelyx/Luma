@@ -13,9 +13,7 @@ class GetStartedModal extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
         color: AppColors.surface,
-        borderRadius: BorderRadius.vertical(
-          top: Radius.circular(20),
-        ),
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
       ),
       child: SafeArea(
         child: Padding(
@@ -96,10 +94,7 @@ class GetStartedModal extends StatelessWidget {
                   ),
                   child: const Text(
                     AppStrings.continueWithPhone,
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                    ),
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
                   ),
                 ),
               ),
@@ -116,20 +111,14 @@ class GetStartedModal extends StatelessWidget {
                   },
                   style: OutlinedButton.styleFrom(
                     foregroundColor: AppColors.textPrimary,
-                    side: const BorderSide(
-                      color: AppColors.divider,
-                      width: 1,
-                    ),
+                    side: const BorderSide(color: AppColors.divider, width: 1),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(28),
                     ),
                   ),
                   child: const Text(
                     AppStrings.continueWithEmail,
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                    ),
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
                   ),
                 ),
               ),
@@ -185,10 +174,7 @@ class GetStartedModal extends StatelessWidget {
                             borderRadius: BorderRadius.circular(28),
                           ),
                         ),
-                        child: const Icon(
-                          Icons.apple,
-                          size: 24,
-                        ),
+                        child: const Icon(Icons.apple, size: 24),
                       ),
                     ),
                   ),

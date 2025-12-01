@@ -60,8 +60,9 @@ void main() {
     blocTest<CounterBloc, CounterState>(
       'should emit [CounterLoading, CounterLoaded] when data is gotten successfully',
       build: () {
-        when(() => mockGetCounter(any()))
-            .thenAnswer((_) async => const Right(tCounter));
+        when(
+          () => mockGetCounter(any()),
+        ).thenAnswer((_) async => const Right(tCounter));
         return bloc;
       },
       act: (bloc) => bloc.add(const LoadCounter()),
@@ -77,8 +78,9 @@ void main() {
     blocTest<CounterBloc, CounterState>(
       'should emit [CounterLoading, CounterError] when getting data fails',
       build: () {
-        when(() => mockGetCounter(any()))
-            .thenAnswer((_) async => const Left(CacheFailure('Cache error')));
+        when(
+          () => mockGetCounter(any()),
+        ).thenAnswer((_) async => const Left(CacheFailure('Cache error')));
         return bloc;
       },
       act: (bloc) => bloc.add(const LoadCounter()),
@@ -98,8 +100,9 @@ void main() {
     blocTest<CounterBloc, CounterState>(
       'should emit [CounterLoading, CounterLoaded] when increment succeeds',
       build: () {
-        when(() => mockIncrementCounter(any()))
-            .thenAnswer((_) async => const Right(tCounter));
+        when(
+          () => mockIncrementCounter(any()),
+        ).thenAnswer((_) async => const Right(tCounter));
         return bloc;
       },
       act: (bloc) => bloc.add(const IncrementCounterEvent()),
@@ -115,8 +118,9 @@ void main() {
     blocTest<CounterBloc, CounterState>(
       'should emit [CounterLoading, CounterError] when increment fails',
       build: () {
-        when(() => mockIncrementCounter(any()))
-            .thenAnswer((_) async => const Left(CacheFailure('Failed to increment')));
+        when(() => mockIncrementCounter(any())).thenAnswer(
+          (_) async => const Left(CacheFailure('Failed to increment')),
+        );
         return bloc;
       },
       act: (bloc) => bloc.add(const IncrementCounterEvent()),
@@ -136,8 +140,9 @@ void main() {
     blocTest<CounterBloc, CounterState>(
       'should emit [CounterLoading, CounterLoaded] when decrement succeeds',
       build: () {
-        when(() => mockDecrementCounter(any()))
-            .thenAnswer((_) async => const Right(tCounter));
+        when(
+          () => mockDecrementCounter(any()),
+        ).thenAnswer((_) async => const Right(tCounter));
         return bloc;
       },
       act: (bloc) => bloc.add(const DecrementCounterEvent()),
@@ -157,8 +162,9 @@ void main() {
     blocTest<CounterBloc, CounterState>(
       'should emit [CounterLoading, CounterLoaded] when reset succeeds',
       build: () {
-        when(() => mockResetCounter(any()))
-            .thenAnswer((_) async => const Right(tCounter));
+        when(
+          () => mockResetCounter(any()),
+        ).thenAnswer((_) async => const Right(tCounter));
         return bloc;
       },
       act: (bloc) => bloc.add(const ResetCounterEvent()),

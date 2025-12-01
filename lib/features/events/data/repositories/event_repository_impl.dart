@@ -6,9 +6,7 @@ import '../datasources/event_dummy_datasource.dart';
 
 /// Implementation of EventRepository using dummy data
 class EventRepositoryImpl implements EventRepository {
-  const EventRepositoryImpl({
-    required this.dummyDataSource,
-  });
+  const EventRepositoryImpl({required this.dummyDataSource});
 
   final EventDummyDataSource dummyDataSource;
 
@@ -28,7 +26,9 @@ class EventRepositoryImpl implements EventRepository {
       final events = await dummyDataSource.getNearbyEvents();
       return Right(events);
     } catch (e) {
-      return Left(ServerFailure('Failed to get nearby events: ${e.toString()}'));
+      return Left(
+        ServerFailure('Failed to get nearby events: ${e.toString()}'),
+      );
     }
   }
 

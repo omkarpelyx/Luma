@@ -3,7 +3,6 @@ import '../core/constants/app_colors.dart';
 import '../core/constants/app_strings.dart';
 import 'routes/app_router.dart';
 
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 

@@ -7,16 +7,12 @@ class CounterModel extends Counter {
 
   /// Create a CounterModel from JSON
   factory CounterModel.fromJson(Map<String, dynamic> json) {
-    return CounterModel(
-      value: json['value'] as int,
-    );
+    return CounterModel(value: json['value'] as int);
   }
 
   /// Convert CounterModel to JSON
   Map<String, dynamic> toJson() {
-    return {
-      'value': value,
-    };
+    return {'value': value};
   }
 
   /// Create a CounterModel from a Counter entity

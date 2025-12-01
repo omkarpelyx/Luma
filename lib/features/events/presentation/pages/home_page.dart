@@ -34,9 +34,7 @@ class HomePageContent extends StatelessWidget {
           builder: (context, state) {
             if (state is EventsLoading) {
               return const Center(
-                child: CircularProgressIndicator(
-                  color: AppColors.accent,
-                ),
+                child: CircularProgressIndicator(color: AppColors.accent),
               );
             }
 
@@ -246,18 +244,15 @@ class HomePageContent extends StatelessWidget {
                     SliverPadding(
                       padding: const EdgeInsets.all(16),
                       sliver: SliverList(
-                        delegate: SliverChildBuilderDelegate(
-                          (context, index) {
-                            final event = state.nearbyEvents[index];
-                            return EventCard(
-                              event: event,
-                              onTap: () {
-                                // TODO: Navigate to event details
-                              },
-                            );
-                          },
-                          childCount: state.nearbyEvents.length,
-                        ),
+                        delegate: SliverChildBuilderDelegate((context, index) {
+                          final event = state.nearbyEvents[index];
+                          return EventCard(
+                            event: event,
+                            onTap: () {
+                              // TODO: Navigate to event details
+                            },
+                          );
+                        }, childCount: state.nearbyEvents.length),
                       ),
                     ),
                   ],

@@ -5,11 +5,7 @@ import '../../domain/entities/event.dart';
 
 /// Event card widget for displaying event information
 class EventCard extends StatelessWidget {
-  const EventCard({
-    required this.event,
-    required this.onTap,
-    super.key,
-  });
+  const EventCard({required this.event, required this.onTap, super.key});
 
   final Event event;
   final VoidCallback onTap;
@@ -48,14 +44,14 @@ class EventCard extends StatelessWidget {
                         },
                       )
                     : event.imageUrl.startsWith('assets/')
-                        ? Image.asset(
-                            event.imageUrl,
-                            fit: BoxFit.cover,
-                            errorBuilder: (context, error, stackTrace) {
-                              return _buildPlaceholder();
-                            },
-                          )
-                        : _buildPlaceholder(),
+                    ? Image.asset(
+                        event.imageUrl,
+                        fit: BoxFit.cover,
+                        errorBuilder: (context, error, stackTrace) {
+                          return _buildPlaceholder();
+                        },
+                      )
+                    : _buildPlaceholder(),
               ),
             ),
 
@@ -189,7 +185,7 @@ class EventCard extends StatelessWidget {
       'Thursday',
       'Friday',
       'Saturday',
-      'Sunday'
+      'Sunday',
     ];
     return days[date.weekday - 1];
   }

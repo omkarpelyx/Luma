@@ -18,10 +18,7 @@ class VerifyOtp implements UseCase<User, VerifyOtpParams> {
 }
 
 class VerifyOtpParams extends Equatable {
-  const VerifyOtpParams({
-    required this.phoneNumber,
-    required this.code,
-  });
+  const VerifyOtpParams({required this.phoneNumber, required this.code});
 
   final String phoneNumber;
   final String code;

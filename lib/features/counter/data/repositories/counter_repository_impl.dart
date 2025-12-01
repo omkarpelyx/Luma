@@ -8,9 +8,7 @@ import '../models/counter_model.dart';
 /// Implementation of CounterRepository
 /// Handles data operations and error handling
 class CounterRepositoryImpl implements CounterRepository {
-  const CounterRepositoryImpl({
-    required this.localDataSource,
-  });
+  const CounterRepositoryImpl({required this.localDataSource});
 
   final CounterLocalDataSource localDataSource;
 

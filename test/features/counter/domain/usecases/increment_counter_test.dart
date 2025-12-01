@@ -20,37 +20,33 @@ void main() {
 
   const tCounter = Counter(value: 1);
 
-  test(
-    'should increment counter value from repository',
-    () async {
-      // arrange
-      when(() => mockRepository.incrementCounter())
-          .thenAnswer((_) async => const Right(tCounter));
+  test('should increment counter value from repository', () async {
+    // arrange
+    when(
+      () => mockRepository.incrementCounter(),
+    ).thenAnswer((_) async => const Right(tCounter));
 
-      // act
-      final result = await usecase(const NoParams());
+    // act
+    final result = await usecase(const NoParams());
 
-      // assert
-      expect(result, const Right(tCounter));
-      verify(() => mockRepository.incrementCounter());
-      verifyNoMoreInteractions(mockRepository);
-    },
-  );
+    // assert
+    expect(result, const Right(tCounter));
+    verify(() => mockRepository.incrementCounter());
+    verifyNoMoreInteractions(mockRepository);
+  });
 
-  test(
-    'should return failure when repository fails',
-    () async {
-      // arrange
-      when(() => mockRepository.incrementCounter())
-          .thenAnswer((_) async => const Left(CacheFailure('Cache error')));
+  test('should return failure when repository fails', () async {
+    // arrange
+    when(
+      () => mockRepository.incrementCounter(),
+    ).thenAnswer((_) async => const Left(CacheFailure('Cache error')));
 
-      // act
-      final result = await usecase(const NoParams());
+    // act
+    final result = await usecase(const NoParams());
 
-      // assert
-      expect(result, const Left(CacheFailure('Cache error')));
-      verify(() => mockRepository.incrementCounter());
-      verifyNoMoreInteractions(mockRepository);
-    },
-  );
+    // assert
+    expect(result, const Left(CacheFailure('Cache error')));
+    verify(() => mockRepository.incrementCounter());
+    verifyNoMoreInteractions(mockRepository);
+  });
 }

@@ -23,15 +23,9 @@ class CounterView extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Text(
-            'Counter Value:',
-            style: TextStyle(fontSize: 24),
-          ),
+          const Text('Counter Value:', style: TextStyle(fontSize: 24)),
           const SizedBox(height: 16),
-          Text(
-            '$value',
-            style: Theme.of(context).textTheme.displayLarge,
-          ),
+          Text('$value', style: Theme.of(context).textTheme.displayLarge),
           const SizedBox(height: 48),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
