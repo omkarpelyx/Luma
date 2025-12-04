@@ -8,7 +8,7 @@ import 'events_state.dart';
 /// BLoC for managing events state
 class EventsBloc extends Bloc<EventsEvent, EventsState> {
   EventsBloc({required this.getUserEvents, required this.getNearbyEvents})
-    : super(const EventsInitial()) {
+    : super(const EventsInitial()) { 
     on<LoadUserEvents>(_onLoadUserEvents);
     on<LoadNearbyEvents>(_onLoadNearbyEvents);
     on<RefreshEvents>(_onRefreshEvents);

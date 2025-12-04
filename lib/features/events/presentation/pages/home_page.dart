@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
 import '../../../../app/injection.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_strings.dart';
@@ -123,7 +122,7 @@ class HomePageContent extends StatelessWidget {
                               onPressed: () {
                                 // TODO: Navigate to all events
                               },
-                              child: Row(
+                              child: const Row(
                                 children: [
                                   Text(
                                     AppStrings.viewAll,
@@ -131,7 +130,7 @@ class HomePageContent extends StatelessWidget {
                                       color: AppColors.textSecondary,
                                     ),
                                   ),
-                                  const SizedBox(width: 4),
+                                  SizedBox(width: 4),
                                   Icon(
                                     Icons.arrow_forward_ios,
                                     size: 14,
@@ -170,7 +169,7 @@ class HomePageContent extends StatelessWidget {
                                 ),
                               ),
                               const SizedBox(width: 16),
-                              Expanded(
+                              const Expanded(
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
@@ -182,7 +181,7 @@ class HomePageContent extends StatelessWidget {
                                         color: AppColors.textPrimary,
                                       ),
                                     ),
-                                    const SizedBox(height: 4),
+                                    SizedBox(height: 4),
                                     Text(
                                       AppStrings.noUpcomingEventsDesc,
                                       style: TextStyle(
@@ -199,12 +198,12 @@ class HomePageContent extends StatelessWidget {
                       ),
 
                     // Picked for You Section
-                    SliverToBoxAdapter(
+                    const SliverToBoxAdapter(
                       child: Padding(
-                        padding: const EdgeInsets.fromLTRB(16, 24, 16, 8),
+                        padding: EdgeInsets.fromLTRB(16, 24, 16, 8),
                         child: Row(
                           children: [
-                            const Text(
+                            Text(
                               AppStrings.pickedForYou,
                               style: TextStyle(
                                 fontSize: 20,
@@ -217,9 +216,9 @@ class HomePageContent extends StatelessWidget {
                       ),
                     ),
 
-                    SliverToBoxAdapter(
+                    const SliverToBoxAdapter(
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                        padding: EdgeInsets.symmetric(horizontal: 16.0),
                         child: Row(
                           children: [
                             Text(
@@ -229,7 +228,7 @@ class HomePageContent extends StatelessWidget {
                                 color: AppColors.textSecondary,
                               ),
                             ),
-                            const SizedBox(width: 8),
+                            SizedBox(width: 8),
                             Icon(
                               Icons.keyboard_arrow_down,
                               color: AppColors.textSecondary,
